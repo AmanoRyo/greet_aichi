@@ -19,12 +19,6 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-
-            // 新しいカラムの追加
-            $table->string('language')->nullable();
-            $table->string('city')->nullable();
-            $table->integer('age')->nullable();
-            $table->string('gender')->nullable();
         });
     }
 

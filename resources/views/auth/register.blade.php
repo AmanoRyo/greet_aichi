@@ -39,13 +39,16 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <!-- Language -->
-        <div class="mt-4">
-            <x-input-label for="language" :value="__('Language')" />
-            <x-text-input id="language" class="block mt-1 w-full" type="text" name="language" :value="old('language')" required autofocus />
-            <x-input-error :messages="$errors->get('language')" class="mt-2" />
-        </div>
-
+         <!-- Language -->
+        <div class="mb-4">
+                        <label for="body" class="block text-gray-700 text-sm font-bold mb-2">Language</label>
+                        <select name="language">
+                            <option>Chinese</option>
+                            <option>English</option>
+                            <option>Japanese</option>
+                            <option>Portugal</option>
+                        </select>
+                    </div>        
         <!-- City -->
         <div class="mt-4">
             <x-input-label for="city" :value="__('City')" />
@@ -60,17 +63,15 @@
             <x-input-error :messages="$errors->get('age')" class="mt-2" />
         </div>
 
-        <!-- Age -->
-        <div class="mt-4">
-            <x-input-label for="gender" :value="__('Gender')" />
-            <x-select-input id="gender" class="block mt-1 w-full" name="gender" required>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </x-select-input>
-            <x-input-error :messages="$errors->get('gender')" class="mt-2" />
-        </div>
-
+          <!-- Gender -->
+          <div class="mb-4">
+                        <label for="body" class="block text-gray-700 text-sm font-bold mb-2">Gender</label>
+                        <select name="gender">
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>その他</option>
+                        </select>
+                    </div>
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
@@ -80,5 +81,7 @@
                 {{ __('Register') }}
             </x-primary-button>
         </div>
+        
+      
     </form>
 </x-guest-layout>
