@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('新規投稿') }}
+            {{ __('お悩みを教えてください') }}
         </h2>
     </x-slot>
 
@@ -17,6 +17,16 @@
                     <div class="mb-4">
                         <label for="body" class="block text-gray-700 text-sm font-bold mb-2">本文</label>
                         <textarea name="body" id="body" rows="6" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label for="body" class="block text-gray-700 text-sm font-bold mb-2">カテゴリ</label>
+                        <select name="category">
+                            <option>公的手続き</option>
+                            <option>交通</option>
+                            <option>食事</option>
+                            <option>イベント</option>
+                            <option>その他</option>
+                        </select>
                     </div>
                     <div class="flex justify-end">
                         <button type="submit" class="py-2 px-4 btn btn-primary">投稿する</button>

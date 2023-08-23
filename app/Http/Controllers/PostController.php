@@ -24,11 +24,13 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'body' => 'required|string',
+            'category' => 'required|string',
         ]);
 
         $post = new Post();
         $post->title = $validatedData['title'];
         $post->body = $validatedData['body'];
+        $post->category = $validatedData['category'];
         $post->user_id = Auth::id();
         $post->save();
 
@@ -52,11 +54,13 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'body' => 'required|string',
+            'category' => 'required|string',
         ]);
 
         $post = Post::findOrFail($id);
         $post->title = $validatedData['title'];
         $post->body = $validatedData['body'];
+        $post->category = $validatedData['category'];
         $post->save();
 
         return redirect()->route('myposts')->with('success', '投稿が更新されました');
