@@ -39,6 +39,39 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
+         <!-- Language -->
+        <div class="mb-4">
+                        <label for="body" class="block text-gray-700 text-sm font-bold mb-2">Language</label>
+                        <select name="language">
+                            <option>Chinese</option>
+                            <option>English</option>
+                            <option>Japanese</option>
+                            <option>Portugal</option>
+                        </select>
+                    </div>        
+        <!-- City -->
+        <div class="mt-4">
+            <x-input-label for="city" :value="__('City')" />
+            <x-text-input id="city" class="block mt-1 w-full" type="text" name="city" :value="old('city')" required />
+            <x-input-error :messages="$errors->get('city')" class="mt-2" />
+        </div>
+
+        <!-- Age -->
+        <div class="mt-4">
+            <x-input-label for="age" :value="__('Age')" />
+            <x-text-input id="age" class="block mt-1 w-full" type="number" name="age" :value="old('age')" required />
+            <x-input-error :messages="$errors->get('age')" class="mt-2" />
+        </div>
+
+          <!-- Gender -->
+          <div class="mb-4">
+                        <label for="body" class="block text-gray-700 text-sm font-bold mb-2">Gender</label>
+                        <select name="gender">
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>その他</option>
+                        </select>
+                    </div>
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
@@ -48,5 +81,7 @@
                 {{ __('Register') }}
             </x-primary-button>
         </div>
+        
+      
     </form>
 </x-guest-layout>
