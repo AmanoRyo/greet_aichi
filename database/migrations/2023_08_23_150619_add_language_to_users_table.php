@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            //$table->string('language')->nullable();
+            $table->string('language')->nullable();
             
         });
     }
@@ -25,7 +25,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            //$table->dropColumn('language');
+            $table->dropColumn('language');
         });
     }
 };
