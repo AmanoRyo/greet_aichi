@@ -43,10 +43,10 @@
         <div class="mb-4">
                         <label for="body" class="block text-gray-700 text-sm font-bold mb-2">Language</label>
                         <select name="language">
-                            <option>Chinese</option>
-                            <option>English</option>
-                            <option>Japanese</option>
-                            <option>Portugal</option>
+                            <option value="zh-CN">Chinese</option>
+                            <option value="en"> English</option>
+                            <option value="ja">Japanese</option>
+                            <option value="pt">Portugal</option>
                         </select>
                     </div>        
         <!-- City -->
