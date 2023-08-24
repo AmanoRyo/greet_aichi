@@ -24,8 +24,25 @@
                             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                                 <a href="{{ route('post.detail', ['id' => $post->id]) }}" class="bg-white border-b border-gray-200 p-6 block w-full text-left
                                 font-semibold text-gray-800 hover:bg-gray-100 text-decoration-none">
-                                    <h1 class="text-xl font-bold mb-2">{{ $post->title }}</h1>
-                                    <h2 class="text-sm mb-2 border-bottom">{{\Illuminate\Support\Str::limit($post->body, 100, '...')}}</h2>
+                                    <h1 class="text-xl font-bold mb-2">
+                                        @php
+                                            $apiKey = env('GOOGLE_TRANSLATE_API_KEY');
+                                            $translate = new Google\Cloud\Translate\V2\TranslateClient(['key' => $apiKey]);
+                                            $targetLanguage = 'en';
+                                            $result = $translate->translate($post->title, ['target' => $targetLanguage]);
+                                            echo $result['text'];
+                                        @endphp
+                                    </h1>
+
+                                    <h2 class="text-sm mb-2 border-bottom">{{\Illuminate\Support\Str::limit($post->result, 100, '...')}}
+                                         @php
+                                            $apiKey = env('GOOGLE_TRANSLATE_API_KEY');
+                                            $translate = new Google\Cloud\Translate\V2\TranslateClient(['key' => $apiKey]);
+                                            $targetLanguage = 'en';
+                                            $result = $translate->translate($post->body, ['target' => $targetLanguage]);
+                                            echo $result['text'];
+                                        @endphp
+                                    </h2>
                                     <div class="flex justify-between mt-2">
                                         <p class="text-gray-400">{{ $post->user->name }}</p>
                                         <p class="text-gray-400">#{{ $post->category }}</p>

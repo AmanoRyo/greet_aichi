@@ -24,6 +24,15 @@ class TranslationController extends Controller
      *
      * @param  Request  $request
      */
+
+     public function translateText($text, $targetLanguage)
+     {
+        $apiKey = env('GOOGLE_TRANSLATE_API_KEY');
+        $translate = new TranslateClient(['key' => $apiKey]);
+        $result = $translate->translate($text, ['target' => $targetLanguage]);
+        return $result['text'];
+     }
+
     public function translation(Request $request)
     {
         
