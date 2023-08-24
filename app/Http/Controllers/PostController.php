@@ -49,6 +49,12 @@ class PostController extends Controller
         return view('post.edit', compact('post'));
     }
 
+    public function detail($id)
+    {
+        $post = Post::findOrFail($id);
+        return view('post.detail', compact('post'));
+    }
+
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
