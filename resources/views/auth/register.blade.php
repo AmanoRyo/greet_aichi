@@ -41,7 +41,7 @@
 
          <!-- Language -->
         <div class="mb-4">
-                        <label for="body" class="block text-gray-700 text-sm font-bold mb-2">Language</label>
+                        <label for="language" class="block text-gray-700 text-sm font-bold mb-2">Language</label>
                         <select name="language">
                             <option value="zh-CN">Chinese</option>
                             <option value="en"> English</option>
