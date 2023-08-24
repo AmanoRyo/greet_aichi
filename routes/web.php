@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -33,9 +34,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
     Route::post('/post/store', [PostController::class, 'store'])->name('post.store');
     Route::get('/post/{id}', [PostController::class, 'edit'])->name('post.edit');
-    Route::get('/post/index/{id}', [PostController::class, 'detail'])->name('post.detail');
+    Route::get('/post/{id}/detail', [PostController::class, 'detail'])->name('post.detail');
     Route::patch('/post/{id}', [PostController::class, 'update'])->name('post.update');
     Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
+
+    Route::post('/post/{id}/answer', [AnswerController::class, 'store'])->name('ans.store');
+    Route::get('/post/{id}/answer', [AnswerController::class, 'index'])->name('ans.index');
 
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
