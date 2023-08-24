@@ -51,7 +51,7 @@ class PostController extends Controller
 
     public function detail($id)
     {
-        $post = Post::findOrFail($id);
+        $post = Post::with('answers')->findOrFail($id);
         return view('post.detail', compact('post'));
     }
 
