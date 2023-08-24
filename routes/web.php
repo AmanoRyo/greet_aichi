@@ -4,6 +4,7 @@ use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TranslationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,5 +45,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
 
+
 require __DIR__.'/auth.php';
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

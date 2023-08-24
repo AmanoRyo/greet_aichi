@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Encore\Admin\Facades\Admin;
+use Google\Cloud\Translate\V2\TranslateClient;
 
 class Post extends Model
 {
@@ -13,6 +15,11 @@ class Post extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function answers()
+    {
+        return $this->hasMany(AnswerPost::class);
+    }
+    
     protected $targetLanguage;
 
     public function __construct()
@@ -41,12 +48,8 @@ class Post extends Model
         $targetLanguage = auth()->user()->language;
         return $this->translateText($value, $targetLanguage);
     }
-    
-    public function answers()
-    {
-        return $this->hasMany(AnswerPost::class);
-    }
 }
+
 
 
 
