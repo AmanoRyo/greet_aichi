@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TranslationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
+
+Route::get('/translation', [TranslationController::class, 'index'])->name('translation-index');
+Route::post('/translation', [TranslationController::class, 'translation'])->name('translation-translation');
 
 require __DIR__.'/auth.php';
 
