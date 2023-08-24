@@ -20,12 +20,18 @@
             @if (!empty($posts))
                 <ul>
                     @foreach ($posts as $post)
-                        <li class="mb-6 bg-white border rounded-lg p-4">
-                            <h3 class="text-lg font-bold mb-2 border-bottom">{{ $post->title }}</h3>
-                            <p class="text-gray-1000 mt-4">{{ $post->body }}</p>
-                            <div class="flex justify-between mt-8">
-                                <p class="text-gray-600">{{ $post->user->name }}</p>
-                                <p class="text-gray-600">{{ $post->updated_at }}</p>
+                        <li class="mb-4">
+                            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                                <a href="{{ route('post.detail', ['id' => $post->id]) }}" class="bg-white border-b border-gray-200 p-6 block w-full text-left
+                                font-semibold text-gray-800 hover:bg-gray-100 text-decoration-none">
+                                    <h1 class="text-xl font-bold mb-2">{{ $post->title }}</h1>
+                                    <h2 class="text-sm mb-2 border-bottom">{{\Illuminate\Support\Str::limit($post->body, 100, '...')}}</h2>
+                                    <div class="flex justify-between mt-2">
+                                        <p class="text-gray-400">{{ $post->user->name }}</p>
+                                        <p class="text-gray-400">#{{ $post->category }}</p>
+                                        <p class="text-gray-400">{{ $post->updated_at }}</p>
+                                    </div>
+                                </a>
                             </div>
                         </li>
                     @endforeach

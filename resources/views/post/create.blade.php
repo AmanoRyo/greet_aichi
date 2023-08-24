@@ -19,7 +19,7 @@
                         <textarea name="body" id="body" rows="6" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required></textarea>
                     </div>
                     <div class="mb-4">
-                        <label for="body" class="block text-gray-700 text-sm font-bold mb-2">カテゴリ</label>
+                        <label for="category" class="block text-gray-700 text-sm font-bold mb-2">カテゴリ</label>
                         <select name="category">
                             <option>公的手続き</option>
                             <option>交通</option>
