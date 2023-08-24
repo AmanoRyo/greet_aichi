@@ -17,7 +17,7 @@
                 @foreach ($posts as $post)
                     <div class="bg-white shadow p-6 rounded-lg">
                         <h4 class="text-lg font-bold">{{ $post->title }}</h4>
-                        <p class="text-gray-800">{{ $post->body }}</p>
+                        <p class="text-gray-800">{{\Illuminate\Support\Str::limit($post->body, 100, '...')}}</p>
                         <p class="text-gray-800">{{ $post->updated_at }}</p>
 
                         <div class="mt-4 flex">
