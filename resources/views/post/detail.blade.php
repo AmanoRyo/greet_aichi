@@ -9,6 +9,7 @@
         <div class="my-4">
             <div class="flex justify-between mt-8">
                     <p class="text-gray-600">{{ $post->user->name }}</p>
+                    <p class="text-gray-600">{{ $post->user->city }}</p>
                     <p class="text-gray-600">#{{ $post->category }}</p>
                     <p class="text-gray-600">{{ $post->updated_at }}</p>
             </div>

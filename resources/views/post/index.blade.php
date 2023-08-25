@@ -46,6 +46,7 @@
                                     <h2 class="text-sm mb-2 border-bottom {{ $index % 2 === 0 ? 'text-color-fa8072' : '' }}">{{ Illuminate\Support\Str::limit($post->body, 100, '...') }}</h2>
                                     <div class="flex justify-between mt-2">
                                         <p class="text-gray-400">{{ $post->user->name }}</p>
+                                        <p class="text-gray-400">{{ $post->user->city }}</p>
                                         <p class="text-gray-400">#{{ $post->category }}</p>
                                         <p class="text-gray-400">{{ $post->updated_at }}</p>
                                     </div>
