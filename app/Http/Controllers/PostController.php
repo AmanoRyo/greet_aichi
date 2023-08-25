@@ -34,7 +34,7 @@ class PostController extends Controller
         $post->user_id = Auth::id();
         $post->save();
 
-        return redirect()->route('post.index')->with('success', '投稿が作成されました');
+        return redirect()->route('post.index')->with('success', 'Your post has been created!');
     }
 
     public function myPosts()
