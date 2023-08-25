@@ -4,16 +4,28 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
+                <style>
+                .box {
+                    transition: transform 0.3s; /* アニメーションの速度を調整 */
+                }
+
+                .box:hover {
+                    transform: translateY(5px); /* Y軸方向に少し下に移動 */
+                }
+                </style>
+
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('home') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                    <a href="{{ route('home') }}" class="text-white no-underline">
+                        <div class="box rounded-lg bg-red-400 p-3 flex-col items-center">
+                            <p class="text-3xl font-extrabold font-sans mb-2">Greet AICHI</p>
+                        </div>
                     </a>
-                </div>
+                </div>      
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('post.index')" :active="request()->routeIs('post.index')" class="text-decoration-none">
-                        {{ __('掲示板') }}
+                        {{ __('LIFE Q&A') }}
                     </x-nav-link>
                 </div>
             </div>
