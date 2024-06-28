@@ -1,7 +1,15 @@
-# Relicサマーインターン（25卒）のサンプルアプリ
+# GreetAichi
+
+## 構成技術
+- Laravel10
+- GoogleCloudAPI
+    - 翻訳機能で使用
+    - APIが別途必要
+
+## 概要
+Q&Aを通じて地域の在住外国人のお悩みを解決するアプリ
 
 ## 初回セットアップ手順（上から順番に実行）
-
 ```sh
 # 作業ディレクトリに移動して作業を進めてください 
 
@@ -32,12 +40,11 @@ docker-compose exec laravel.test npm run dev
 ## 停止
 
 ```sh
-## 停止するときは下記のコマンドを実行する
 docker-compose stop
 ```
 
 ## URL
-サンプルアプリ：http://localhost/
+アプリ：http://localhost/
 
 phpMyAdmin: http://localhost:8080/
 
